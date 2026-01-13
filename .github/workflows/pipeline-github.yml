@@ -1,0 +1,12 @@
+stages:
+  - setup
+
+setup_job:
+  stage: setup
+  script:
+    - echo "Iniciando fase de setup..."
+    - echo "Preparando entorno de CI..."
+    # Aqui podrias añadir instalacion de dependencias, por ejemplo:
+    # - apt-get update && apt-get install -y curl
+    # - npm install
+    - echo "Setup compltado correctamente."
