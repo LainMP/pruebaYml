@@ -1,12 +1,13 @@
-stages:
-  - setup
-
-setup_job:
-  stage: setup
-  script:
-    - echo "Iniciando fase de setup..."
-    - echo "Preparando entorno de CI..."
-    # Aqui podrias añadir instalacion de dependencias, por ejemplo:
-    # - apt-get update && apt-get install -y curl
-    # - npm install
-    - echo "Setup compltado correctamente."
+name: Github Actions Setup
+on: [push]
+jobs:
+  setup_job:
+    runs-on: ubuntu-lastest
+    steps:
+      - name: Checkout del código
+      - uses: actions/checkout@v4
+      - name: Ejecutando scripts de setup
+        run: |
+          echo "Iniciando fase de setpu..."
+          echo "Preparando entorno de CI..."
+          echo "Setup completado correctamente."
